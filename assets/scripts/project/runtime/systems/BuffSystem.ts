@@ -11,7 +11,7 @@ const { ccclass, property } = _decorator;
 @ccclass('BuffSystem')
 export class BuffSystem extends FGameSystemBase {
     
-    m_buffCompStorage = new TComponentStorage<BuffComponent>();
+    private m_buffCompStorage = new TComponentStorage<BuffComponent>();
 
     onInitialize(world: UGameWorldBase): void {
         world.getUnits().forEach((u, i)=>{

@@ -4,10 +4,18 @@ const { ccclass, property } = _decorator;
 /**
  * 实体单位结构体
  */
-@ccclass('FUnit')
 export class FUnit {
-    @property({ tooltip:"实体Id" })
     Id: number = 0;
+
+    private m_node: Node
+
+    getNode(){
+        return this.m_node;
+    }
+
+    setNode(node: Node){
+        this.m_node = node;
+    }
 }
 
 

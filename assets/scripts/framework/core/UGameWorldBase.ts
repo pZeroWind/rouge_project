@@ -15,7 +15,10 @@ export abstract class UGameWorldBase extends Component {
     WorldName: string = ""
 
     @property({ tooltip:"系统列表", type:[FGameSystemBase] })
-    SystemArray:FGameSystemBase[] = [];
+    Systems:FGameSystemBase[] = [];
+
+    @property({ tooltip:"实体根节点名称", type:Node })
+    UnitRoot:Node;
 
     private UnitsSparseSet = new FSparseArray<FUnit>();
 
@@ -24,17 +27,18 @@ export abstract class UGameWorldBase extends Component {
     start() {
         this.onInitialize();
         //TODO 载入实体
+        
 
         //载入系统组件
-        for (let i = 0; i < this.SystemArray.length; i++) {
-            this.SystemArray[i].onInitialize(this);
+        for (let i = 0; i < this.Systems.length; i++) {
+            this.Systems[i].onInitialize(this);
         }
     }
 
     update(deltaTime: number) {
         //遍历
-        for (let i = 0; i < this.SystemArray.length; i++) {
-            this.SystemArray[i].onUpdate(this, deltaTime);
+        for (let i = 0; i < this.Systems.length; i++) {
+            this.Systems[i].onUpdate(this, deltaTime);
         }
     }
 

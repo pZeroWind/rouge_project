@@ -5,5 +5,19 @@
   "uuid": "4c2efd25-5894-41a5-9987-a231ecd717a5",
   "files": [],
   "subMetas": {},
-  "userData": {}
+  "userData": {
+    "bundleFilterConfig": [
+      {
+        "range": "include",
+        "type": "asset",
+        "patchOption": {
+          "patchType": "glob",
+          "value": "db://assets/scenes/**/*"
+        },
+        "assets": [
+          "5bbdf42e-7c92-404d-84d7-18ca0de3abb9"
+        ]
+      }
+    ]
+  }
 }
