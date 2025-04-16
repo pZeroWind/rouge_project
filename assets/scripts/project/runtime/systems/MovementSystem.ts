@@ -6,7 +6,7 @@ import { SpeedComponent } from '../components/SpeedComponent';
 const { ccclass, property } = _decorator;
 
 /**
- * Buff系统
+ * 移动系统
  */
 @ccclass('MovementSystem')
 export class MovementSystem extends FGameSystemBase {
